@@ -4,6 +4,8 @@ go 1.25.5
 
 require gorm.io/driver/postgres v1.6.0
 
+require github.com/golang-jwt/jwt/v5 v5.3.0 // indirect
+
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
