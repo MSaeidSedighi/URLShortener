@@ -4,7 +4,8 @@ import "github.com/spf13/viper"
 
 type Config struct {
 	// manual assignment not needed if names match completely
-	Port string `mapstructure:"PORT"`
+	Port  string `mapstructure:"PORT"`
+	DbUrl string `mapstructure:"DB_URL"`
 }
 
 func LoadConfig() (Config, error) {

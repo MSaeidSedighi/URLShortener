@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"log"
 	"urlshortener/internal/config"
+	"urlshortener/internal/database"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -12,6 +13,9 @@ func StartServer() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	database.Connect(cfg.DbUrl)
+
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
