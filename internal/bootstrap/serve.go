@@ -5,6 +5,7 @@ import (
 	"urlshortener/internal/config"
 	"urlshortener/internal/database"
 	authRouter "urlshortener/modules/auth/routes"
+	userRouter "urlshortener/modules/user/routes"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -20,6 +21,7 @@ func StartServer() {
 	app := fiber.New()
 
 	authRouter.RegisterRoute(app)
+	userRouter.RegisterRoute(app)
 
 	log.Fatal(app.Listen(":" + cfg.Port))
 }
